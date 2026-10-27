@@ -6,343 +6,425 @@
 <title>What to Do in Tulum · Lighthouse Church Tulum</title>
 <meta name="description" content="A visitor's guide to Tulum from Lighthouse Church Tulum: beaches, cenotes, ruins, where to eat and practical tips.">
 <link rel="icon" href="https://i0.wp.com/lighthousechurch.com.mx/wp-content/uploads/2025/08/cropped-favicon_1.png?fit=192%2C192&ssl=1">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Serif:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,800;1,9..144,900&display=swap" rel="stylesheet">
 <style>
-  /* Brand tokens from lighthousechurch.com.mx */
+  /* Brand tokens and patterns from lighthousechurch.com.mx */
   :root {
     --deep: #10363A;
     --teal: #3A9B8F;
     --sand: #D1AF8C;
     --sand-light: #DFD8C5;
-    --paper: #F6F3EC;
-    --text: #4F494C;
-    --card: #ffffff;
-    --line: #E6E0D2;
+    --text-dark: #1e3a3d;
   }
-  @page { size: Letter; margin: 0.45in 0.55in; }
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
-    margin: 0; background: var(--paper); color: var(--text);
-    font: 10pt/1.5 "DM Sans", -apple-system, Helvetica, Arial, sans-serif;
+    margin: 0; background: var(--deep); color: #fff;
+    font: 16px/1.6 "Helvetica Neue", Helvetica, Arial, sans-serif;
     -webkit-print-color-adjust: exact; print-color-adjust: exact;
   }
-  .wrap { max-width: 7.4in; margin: 0 auto; padding: 16px; }
-  h1, h2, h3 { margin: 0; color: var(--deep); }
-  a { color: var(--teal); }
-  b { color: #2c2729; }
+  a { color: inherit; }
+  .inner { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 
-  .kicker { text-transform: uppercase; letter-spacing: .45em; font-size: 7.5pt; font-weight: 600; }
+  .label {
+    font: 600 12px/1.4 "DM Sans", sans-serif; text-transform: uppercase; letter-spacing: 5px;
+  }
+  .display {
+    font-family: Fraunces, Georgia, serif; font-style: italic; font-weight: 900;
+    text-transform: lowercase; letter-spacing: .01em; line-height: 1;
+  }
+  .btn {
+    display: inline-block; background: var(--teal); color: #fff; text-decoration: none;
+    font: 500 15px "DM Sans", sans-serif; padding: 12px 24px; border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+  }
 
-  .cover {
-    background: var(--deep); color: #fff; border-radius: 4px; padding: 28px 30px 26px; margin-bottom: 18px;
-    position: relative; overflow: hidden;
+  /* Hero: same photo, tint and header as the main site */
+  .hero {
+    position: relative; min-height: 680px;
+    background: linear-gradient(180deg, rgba(16,54,58,.72) 0%, rgba(16,54,58,.45) 40%, rgba(16,54,58,.55) 75%, var(--deep) 100%),
+                url(img/hero.jpg) 18% 30% / cover no-repeat;
   }
-  .cover::after {
-    content: ""; position: absolute; right: -80px; top: -80px; width: 260px; height: 260px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(209,175,140,.28), rgba(209,175,140,0) 70%);
+  .topbar { position: relative; display: flex; justify-content: center; align-items: center; padding: 24px 20px 10px; }
+  .topbar .logo { display: block; width: 400px; max-width: 62%; }
+  .social { position: absolute; left: 40px; top: 50%; transform: translateY(-50%); display: flex; gap: 22px; }
+  .social a { display: block; width: 20px; height: 20px; color: var(--sand-light); }
+  .social svg { width: 100%; height: 100%; fill: currentColor; display: block; }
+  .hero-copy { text-align: center; margin-top: 90px; }
+  .hero h1 { font-size: clamp(46px, 9vw, 96px); margin: 0 0 14px; text-shadow: 0 2px 24px rgba(0,0,0,.45); }
+  .hero p { max-width: 560px; margin: 0 auto; font-size: 17px; text-shadow: 0 1px 8px rgba(0,0,0,.6); }
+  .hero-box {
+    position: absolute; right: 0; bottom: 70px; background: var(--sand-light); color: var(--deep);
+    border-radius: 15px 0 0 15px; padding: 22px 34px 34px; max-width: 420px;
   }
-  .cover img { width: 210px; max-width: 60%; display: block; margin-bottom: 22px; }
-  .cover .kicker { color: var(--sand); }
-  .cover h1 {
-    font-family: "Noto Serif", Georgia, serif; font-style: italic; font-weight: 700;
-    color: #fff; font-size: 32pt; line-height: 1.05; margin: 8px 0 10px;
-  }
-  .cover p { margin: 0; max-width: 34em; color: #e7ece9; }
-  .service {
-    display: inline-block; margin-top: 16px; background: var(--sand-light); color: var(--deep);
-    padding: 8px 14px; border-radius: 4px; font-weight: 700;
-  }
-  .cover .service { color: var(--deep); }
+  .hero-box .label { font-weight: 700; }
+  .hero-btns { position: absolute; right: 40px; bottom: 46px; display: flex; gap: 10px; }
 
-  section { margin: 22px 0 0; }
-  section > .kicker { color: var(--teal); }
-  section > h2 {
-    font-family: "Noto Serif", Georgia, serif; font-style: italic; font-weight: 700;
-    font-size: 18pt; margin: 2px 0 4px;
-  }
-  .lede { margin: 0 0 10px; break-inside: avoid; }
+  /* Section nav */
+  .nav { padding: 40px 0 10px; text-align: center; }
+  .nav .label { color: var(--sand); margin-bottom: 14px; }
+  .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .nav-links .btn { padding: 9px 18px; font-size: 14px; }
 
-  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .card { background: var(--card); border: 1px solid var(--line); border-top: 3px solid var(--teal); border-radius: 4px; padding: 10px 13px; break-inside: avoid; }
-  .card h3 { font-size: 11pt; font-weight: 700; margin-bottom: 2px; }
+  /* Sections */
+  section { padding: 54px 0 60px; position: relative; }
+  section.paper { background: #5fb1a6 url(img/paper-teal.jpg) center / cover; }
+  .tab {
+    display: inline-block; background: var(--sand-light); color: var(--deep);
+    border-radius: 0 15px 15px 0; padding: 18px 40px 20px max(20px, calc((100vw - 1000px) / 2 + 20px));
+    box-shadow: 0 0 10px rgba(0,0,0,.35); margin-bottom: 26px;
+  }
+  .tab h2 { font-size: clamp(34px, 5vw, 48px); margin: 4px 0 0; }
+  .tab .label { font-size: 11px; color: var(--teal); }
+  .lede { max-width: 720px; margin: 0 0 22px; font-size: 17px; }
+  section.paper .lede { color: #0e2e31; }
+
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .card {
+    border-radius: 5px; padding: 18px 20px; break-inside: avoid;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+  }
+  section.paper .card { background: var(--sand-light); border: 0; color: var(--text-dark); box-shadow: 0 0 10px rgba(0,0,0,.25); }
+  .card h3 { font: 700 19px/1.25 "DM Sans", sans-serif; margin: 2px 0 6px; }
   .card p { margin: 0; }
-  .tag { display: inline-block; font-size: 7pt; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); margin-bottom: 2px; }
-  .tag.near { color: #9a7148; }
-  .card.near { border-top-color: var(--sand); }
-
+  .card .label { font-size: 10.5px; letter-spacing: 3px; color: var(--sand); }
+  section.paper .card .label { color: var(--teal); }
+  .card.near { border-left: 5px solid var(--sand); }
+  section.paper .card.near { border-left: 5px solid var(--deep); }
   ul.tips { margin: 0; padding-left: 18px; }
-  ul.tips li { margin: 3px 0; }
+  ul.tips li { margin: 5px 0; }
 
-  .note { background: var(--sand-light); border-radius: 4px; padding: 9px 12px; margin-top: 10px; font-size: 9.5pt; color: var(--deep); }
-  .fees { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--line); font-size: 9.5pt; }
-  .fees th, .fees td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); }
-  .fees th { background: var(--deep); color: #fff; font-weight: 600; }
+  .note {
+    margin-top: 18px; border-radius: 5px; padding: 14px 18px;
+    background: var(--deep); color: #e8efed;
+  }
+  section:not(.paper) .note { background: var(--sand-light); color: var(--deep); }
+
+  .fees { width: 100%; border-collapse: collapse; background: var(--sand-light); color: var(--text-dark); border-radius: 5px; overflow: hidden; }
+  .fees th, .fees td { text-align: left; padding: 12px 16px; border-bottom: 1px solid rgba(16,54,58,.15); }
+  .fees th { background: var(--teal); color: #fff; font: 600 13px "DM Sans", sans-serif; letter-spacing: 1px; text-transform: uppercase; }
   .fees tr:last-child td { border-bottom: 0; }
 
-  .church {
-    background: var(--deep); color: #e7ece9; border-radius: 4px; padding: 22px 26px; margin-top: 24px; break-inside: avoid;
-  }
-  .church .kicker { color: var(--sand); }
-  .church h2 { color: #fff; font-family: "Noto Serif", Georgia, serif; font-style: italic; font-size: 18pt; margin: 4px 0 8px; }
-  .church p { margin: 5px 0; }
-  .church .service { margin: 8px 0 4px; color: var(--deep); }
-  .btns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-  .btn { background: var(--teal); color: #fff; text-decoration: none; padding: 7px 14px; border-radius: 4px; font-weight: 600; font-size: 9.5pt; }
-  .foot { font-size: 8pt; margin-top: 14px; text-align: center; color: #7b7477; }
-  .legend { font-size: 9pt; margin: -4px 0 10px; }
-  .dot { display: inline-block; width: 9px; height: 9px; border-radius: 2px; background: var(--sand); vertical-align: middle; margin-right: 4px; }
+  /* About / closing */
+  .about { padding: 64px 0 40px; }
+  .about .cols { display: grid; grid-template-columns: 1.1fr .9fr; gap: 50px; align-items: start; }
+  .about .logo { width: 220px; margin: 14px 0 16px; display: block; }
+  .about .label { color: #fff; }
+  .about h2 { font-size: 44px; margin: 0 0 14px; text-align: center; }
+  .about .vision { text-align: center; }
+  .about .btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+  .small { font-size: 13px; opacity: .85; }
+  .foot { text-align: center; padding: 26px 20px 40px; font-size: 13px; opacity: .75; }
 
-  @media (max-width: 600px) {
-    .grid { grid-template-columns: 1fr; }
-    .cover h1 { font-size: 27pt; }
-    .cover { padding: 22px; }
-    .kicker { letter-spacing: .3em; }
+  @media (max-width: 760px) {
+    .grid, .about .cols { grid-template-columns: 1fr; }
+    .hero { min-height: 0; padding-bottom: 30px; }
+    .topbar { flex-direction: column-reverse; gap: 16px; }
+    .topbar .logo { max-width: 80%; }
+    .social { position: static; transform: none; }
+    .hero-copy { margin-top: 48px; }
+    .hero-box { position: static; border-radius: 15px; margin: 40px 20px 0; max-width: none; }
+    .hero-btns { position: static; justify-content: center; margin-top: -22px; }
+    .label { letter-spacing: 3.5px; }
+    .tab { padding-right: 28px; }
   }
+
+  @page { size: Letter; margin: 0; }
   @media print {
-    body { background: #fff; }
-    .wrap { max-width: none; padding: 0; }
-    .card { background: #fcfbf8; }
+    body { font-size: 12.5px; }
+    .hero { min-height: 5.6in; }
+    .nav, .hero-btns { display: none; }
+    section { padding: 36px 0 40px; }
+    .tab { padding-left: 20px; }
+    .tab, .lede { break-after: avoid; }
+    .about { break-inside: avoid; }
+    .grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .about .cols { grid-template-columns: 1.1fr .9fr; }
+    .lede, .hero p { font-size: 13.5px; }
+    .card { padding: 12px 15px; }
+    .card h3 { font-size: 15px; }
+    .tab h2 { font-size: 34px; }
+    .hero h1 { font-size: 64px; }
+    .topbar { flex-direction: row; }
+    .social { position: absolute; transform: translateY(-50%); }
+    .fees { break-inside: avoid; }
+    .hero-box { position: absolute; margin: 0; border-radius: 15px 0 0 15px; max-width: 360px; bottom: 60px; }
   }
-  section > h2, section > .kicker, .lede, .legend { break-after: avoid; }
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <header class="cover">
-    <img src="data:image/png;base64,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" alt="Lighthouse Church Tulum">
-    <div class="kicker">Visitor Guide</div>
-    <h1>what to do in Tulum</h1>
-    <p>Beaches, cenotes, ruins, good food and practical tips, put together by your church family here in Tulum. Enjoy your stay, and come and worship with us while you're in town!</p>
-    <div class="service kicker">In person + online · Every Sunday at 10:00 AM</div>
+  <header class="hero">
+    <div class="topbar">
+      <div class="social">
+        <a href="https://www.youtube.com/@LighthouseTulum" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+        <a href="https://www.facebook.com/profile.php?id=100064382601429" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6c0-.9.6-1.1 1-1.1h2.6V1h-3.6C10.1 1 9.3 3.9 9.3 5.8V8H7v4h2.3v11H14V12h3.2l.4-4H14z"/></svg></a>
+        <a href="https://www.instagram.com/lighthousechurchtulum" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg></a>
+      </div>
+      <a href="https://www.lighthousechurch.com.mx"><img class="logo" src="img/logo-sand.png" alt="Lighthouse Church Tulum"></a>
+    </div>
+    <div class="hero-copy inner">
+      <h1 class="display">what to do in tulum</h1>
+      <p>Beaches, cenotes, ruins, good food and practical tips, put together by your church family here in Tulum.</p>
+    </div>
+    <div class="hero-box">
+      <div class="label">A visitor guide from<br>Lighthouse Church Tulum</div>
+    </div>
+    <div class="hero-btns">
+      <a class="btn" href="#beaches">Start exploring</a>
+      <a class="btn" href="What-to-do-in-Tulum.pdf">Download PDF</a>
+    </div>
   </header>
 
-  <!-- 1. Essentials -->
-  <section>
-    <div class="kicker">01 · Essentials</div>
-    <h2>know before you go</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Money</h3>
-        <ul class="tips">
-          <li>Carry <b>pesos in cash</b>. Cenotes, taco stands and colectivos rarely take cards.</li>
-          <li>Use ATMs <b>inside banks</b> and choose "decline conversion" so you're charged in pesos.</li>
-          <li>Beach-zone prices are often 2–3× what you'll pay in town.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Getting around</h3>
-        <ul class="tips">
-          <li><b>Bike</b>: the easiest way between town and the beach, and there's a bike path.</li>
-          <li><b>Taxi</b>: agree on the price <i>before</i> you get in.</li>
-          <li><b>Colectivos</b> (white vans) on Hwy 307 go cheaply to Akumal, Playa del Carmen and nearby cenotes.</li>
-          <li>Arriving: Tulum airport (TQO), Cancún (CUN), the ADO bus station downtown, or the Tren Maya.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Sun &amp; water</h3>
-        <ul class="tips">
-          <li>Use <b>biodegradable/reef-safe sunscreen</b>. Most cenotes require it, or ask you to rinse off.</li>
-          <li>Drink only bottled or purified water.</li>
-          <li>Watch the beach flags: <b>green</b> safe, <b>yellow</b> caution, <b>red</b> stay out.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Seaweed &amp; safety</h3>
-        <ul class="tips">
-          <li><b>Sargassum</b> (seaweed) is worst roughly April–September. Check a sargassum report before planning a beach day.</li>
-          <li>Emergencies: <b>911</b>.</li>
-          <li>Keep valuables out of sight on the beach and in cars.</li>
-        </ul>
+  <nav class="nav inner">
+    <div class="label">Jump to</div>
+    <div class="nav-links">
+      <a class="btn" href="#essentials">Essentials</a>
+      <a class="btn" href="#beaches">Beaches</a>
+      <a class="btn" href="#ruins">Ruins</a>
+      <a class="btn" href="#cenotes">Cenotes</a>
+      <a class="btn" href="#eat">Where to eat</a>
+      <a class="btn" href="#trips">Day trips</a>
+    </div>
+  </nav>
+
+  <!-- Essentials -->
+  <section id="essentials">
+    <div class="tab"><div class="label">01 · Essentials</div><h2 class="display">know before you go</h2></div>
+    <div class="inner">
+      <div class="grid">
+        <div class="card">
+          <h3>Money</h3>
+          <ul class="tips">
+            <li>Carry <b>pesos in cash</b>. Cenotes, taco stands and colectivos rarely take cards.</li>
+            <li>Use ATMs <b>inside banks</b> and choose "decline conversion" so you're charged in pesos.</li>
+            <li>Beach-zone prices are often 2–3× what you'll pay in town.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Getting around</h3>
+          <ul class="tips">
+            <li><b>Bike</b>: the easiest way between town and the beach, and there's a bike path.</li>
+            <li><b>Taxi</b>: agree on the price <i>before</i> you get in.</li>
+            <li><b>Colectivos</b> (white vans) on Hwy 307 go cheaply to Akumal, Playa del Carmen and nearby cenotes.</li>
+            <li>Arriving: Tulum airport (TQO), Cancún (CUN), the ADO bus station downtown, or the Tren Maya.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Sun &amp; water</h3>
+          <ul class="tips">
+            <li>Use <b>biodegradable/reef-safe sunscreen</b>. Most cenotes require it, or ask you to rinse off.</li>
+            <li>Drink only bottled or purified water.</li>
+            <li>Watch the beach flags: <b>green</b> safe, <b>yellow</b> caution, <b>red</b> stay out.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Seaweed &amp; safety</h3>
+          <ul class="tips">
+            <li><b>Sargassum</b> (seaweed) is worst roughly April–September. Check a sargassum report before planning a beach day.</li>
+            <li>Emergencies: <b>911</b>.</li>
+            <li>Keep valuables out of sight on the beach and in cars.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 2. Beaches -->
-  <section>
-    <div class="kicker">02 · Beaches</div>
-    <h2>public beaches</h2>
-    <p class="lede">All beaches in Mexico are public by law. These are the easiest places to get onto the sand without paying a beach club.</p>
-    <div class="grid">
-      <div class="card">
-        <span class="tag">Free</span>
-        <h3>Playa Pescadores</h3>
-        <p>Fishing boats, calm-ish water and a local feel, at the start of the hotel zone. Easy to reach by bike. Restaurants nearby.</p>
+  <!-- Beaches -->
+  <section id="beaches" class="paper">
+    <div class="tab"><div class="label">02 · Beaches</div><h2 class="display">public beaches</h2></div>
+    <div class="inner">
+      <p class="lede">All beaches in Mexico are public by law. These are the easiest places to get onto the sand without paying a beach club.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="label">Free</div>
+          <h3>Playa Pescadores</h3>
+          <p>Fishing boats, calm-ish water and a local feel, at the start of the hotel zone. Easy to reach by bike. Restaurants nearby.</p>
+        </div>
+        <div class="card">
+          <div class="label">Inside Parque del Jaguar</div>
+          <h3>Playa Santa Fe / Playa Ruinas</h3>
+          <p>Turquoise water right below the Mayan ruins. Rustic, with few services. Access can close when the surf is high.</p>
+        </div>
+        <div class="card">
+          <div class="label">Inside Parque del Jaguar</div>
+          <h3>Playa Paraíso</h3>
+          <p>The postcard beach: white sand and palm trees. Go early to avoid crowds. Bring water and shade.</p>
+        </div>
+        <div class="card">
+          <div class="label">Free</div>
+          <h3>Playa Las Palmas</h3>
+          <p>Quiet stretch south of the hotel zone with informal parking and no services. Pack in what you need and pack out your trash.</p>
+        </div>
       </div>
-      <div class="card">
-        <span class="tag">Inside Parque del Jaguar</span>
-        <h3>Playa Santa Fe / Playa Ruinas</h3>
-        <p>Turquoise water right below the Mayan ruins. Rustic, with few services. Access can close when the surf is high.</p>
-      </div>
-      <div class="card">
-        <span class="tag">Inside Parque del Jaguar</span>
-        <h3>Playa Paraíso</h3>
-        <p>The postcard beach: white sand and palm trees. Go early to avoid crowds. Bring water and shade.</p>
-      </div>
-      <div class="card">
-        <span class="tag">Free</span>
-        <h3>Playa Las Palmas</h3>
-        <p>Quiet stretch south of the hotel zone with informal parking and no services. Pack in what you need and pack out your trash.</p>
-      </div>
-    </div>
-    <div class="note"><b>Tip:</b> Parking near the beaches is very limited, and drivers are often steered into paid beach-club lots. A bike or taxi is easier. Many beach clubs also offer free entry or a minimum spend, so ask before you sit down.</div>
-  </section>
-
-  <!-- 3. Ruins & park -->
-  <section>
-    <div class="kicker">03 · History</div>
-    <h2>ruins &amp; Parque del Jaguar</h2>
-    <p class="lede">Tulum's clifftop Mayan city sits inside the new Parque del Jaguar, which also has bike paths and beach access. Go at opening time: it's cooler and much quieter.</p>
-    <table class="fees">
-      <tr><th>Entry (from July 20, 2026)</th><th>Foreign visitors</th><th>Mexican visitors</th></tr>
-      <tr><td>Parque del Jaguar</td><td>$100 MXN</td><td>Free</td></tr>
-      <tr><td>National Park + Archaeological Zone (ruins)</td><td>$165 MXN</td><td>$80 MXN (Mon–Sat)</td></tr>
-    </table>
-    <div class="note">Tulum residents with proof of address get in free. On <b>Sundays</b>, Mexican citizens and foreign residents of Mexico enter the ruins free. Children, seniors and people with disabilities are also exempt. Fees change, so bring cash and check at the gate.</div>
-  </section>
-
-  <!-- 4. Cenotes -->
-  <section>
-    <div class="kicker">04 · Swim</div>
-    <h2>cenotes</h2>
-    <p class="lede">Cenotes are freshwater swimming holes in limestone caves, with crystal-clear water, and they're a must in Tulum. Expect roughly $150–500 MXN entry, cash only. Life jackets and lockers usually cost extra.</p>
-    <p class="legend"><span class="dot"></span>Several of the best are on the <b>Tulum–Cobá road</b>, the same road as our church, so you can swim after the Sunday service.</p>
-    <div class="grid">
-      <div class="card near">
-        <span class="tag near">Cobá road · near church</span>
-        <h3>Gran Cenote</h3>
-        <p>The classic: turtles, caverns and great snorkeling. Very popular, so arrive at opening (around 8 am).</p>
-      </div>
-      <div class="card near">
-        <span class="tag near">Cobá road · near church</span>
-        <h3>Cenote Calavera</h3>
-        <p>The "skull" cenote: three holes in the ground and a jump into the water below. Small, fun and cheaper.</p>
-      </div>
-      <div class="card near">
-        <span class="tag near">Cobá road</span>
-        <h3>Zacil-Ha &amp; Car Wash (Aktun Ha)</h3>
-        <p>Laid-back open-air cenotes, good for families and an easy swim.</p>
-      </div>
-      <div class="card">
-        <span class="tag">Hwy 307 north</span>
-        <h3>Dos Ojos</h3>
-        <p>World-famous cave system for snorkeling and diving. A guided tour is worth it.</p>
-      </div>
-      <div class="card">
-        <span class="tag">Tankah Bay</span>
-        <h3>Casa Cenote</h3>
-        <p>A mangrove-lined cenote that flows to the sea, just north of Tulum. Gentle and great for kids.</p>
-      </div>
-      <div class="card">
-        <span class="tag">Hwy 307 north</span>
-        <h3>Cenote Azul &amp; Jardín del Edén</h3>
-        <p>Big, sunny open cenotes with cliff jumps, between Tulum and Playa del Carmen.</p>
-      </div>
+      <div class="note"><b>Tip:</b> Parking near the beaches is very limited, and drivers are often steered into paid beach-club lots. A bike or taxi is easier. Many beach clubs also offer free entry or a minimum spend, so ask before you sit down.</div>
     </div>
   </section>
 
-  <!-- 5. Eat -->
-  <section>
-    <div class="kicker">05 · Eat</div>
-    <h2>where to eat</h2>
-    <p class="lede">Eat in town (<i>el pueblo</i>) for real flavor at local prices. Three tacos in town often cost what one costs on the beach.</p>
-    <div class="grid">
-      <div class="card">
-        <span class="tag">Tacos · dinner</span>
-        <h3>Antojitos La Chiapaneca</h3>
-        <p>A local favorite for tacos al pastor and salbutes. Evenings only, cash only, standing room.</p>
-      </div>
-      <div class="card">
-        <span class="tag">Breakfast · lunch</span>
-        <h3>Taquería Honorio</h3>
-        <p>Yucatecan cochinita pibil and lechón tacos. Opens early and often sells out by early afternoon.</p>
-      </div>
-      <div class="card">
-        <span class="tag">Tacos · grill</span>
-        <h3>El Asadero</h3>
-        <p>Grilled-meat tacos and plates, consistently rated among the best value in town.</p>
-      </div>
-      <div class="card">
-        <span class="tag">Seafood</span>
-        <h3>El Camello Jr.</h3>
-        <p>No-frills seafood spot on the main avenue, known for huge ceviches and fish tacos.</p>
-      </div>
-      <div class="card">
-        <span class="tag">Seafood</span>
-        <h3>Los Aguachiles</h3>
-        <p>Lively seafood cantina with aguachiles, tostadas and shrimp tacos.</p>
-      </div>
-      <div class="card">
-        <span class="tag">Coffee · breakfast</span>
-        <h3>Don Cafeto &amp; Burrito Amor</h3>
-        <p>Easy, reliable picks downtown: classic Mexican breakfasts at Don Cafeto, and big burritos and smoothies at Burrito Amor.</p>
-      </div>
-      <div class="card">
-        <span class="tag">Special night out</span>
-        <h3>Hartwood (beach road)</h3>
-        <p>Famous wood-fired restaurant in the hotel zone. Book ahead.</p>
-      </div>
-      <div class="card">
-        <span class="tag">Treat</span>
-        <h3>Marquesitas &amp; elotes</h3>
-        <p>Look for evening street carts in the town square: crispy rolled marquesitas and corn on the cob.</p>
+  <!-- Ruins -->
+  <section id="ruins">
+    <div class="tab"><div class="label">03 · History</div><h2 class="display">ruins &amp; jaguar park</h2></div>
+    <div class="inner">
+      <p class="lede">Tulum's clifftop Mayan city sits inside the new Parque del Jaguar, which also has bike paths and beach access. Go at opening time: it's cooler and much quieter.</p>
+      <table class="fees">
+        <tr><th>Entry (from July 20, 2026)</th><th>Foreign visitors</th><th>Mexican visitors</th></tr>
+        <tr><td>Parque del Jaguar</td><td>$100 MXN</td><td>Free</td></tr>
+        <tr><td>National Park + Archaeological Zone (ruins)</td><td>$165 MXN</td><td>$80 MXN (Mon–Sat)</td></tr>
+      </table>
+      <div class="note">Tulum residents with proof of address get in free. On <b>Sundays</b>, Mexican citizens and foreign residents of Mexico enter the ruins free. Children, seniors and people with disabilities are also exempt. Fees change, so bring cash and check at the gate.</div>
+    </div>
+  </section>
+
+  <!-- Cenotes -->
+  <section id="cenotes" class="paper">
+    <div class="tab"><div class="label">04 · Swim</div><h2 class="display">cenotes</h2></div>
+    <div class="inner">
+      <p class="lede">Cenotes are freshwater swimming holes in limestone caves, with crystal-clear water, and they're a must in Tulum. Expect roughly $150–500 MXN entry, cash only. Life jackets and lockers usually cost extra. Several of the best are on the <b>Tulum–Cobá road</b>, the same road as our church.</p>
+      <div class="grid">
+        <div class="card near">
+          <div class="label">Cobá road · near church</div>
+          <h3>Gran Cenote</h3>
+          <p>The classic: turtles, caverns and great snorkeling. Very popular, so arrive at opening (around 8 am).</p>
+        </div>
+        <div class="card near">
+          <div class="label">Cobá road · near church</div>
+          <h3>Cenote Calavera</h3>
+          <p>The "skull" cenote: three holes in the ground and a jump into the water below. Small, fun and cheaper.</p>
+        </div>
+        <div class="card near">
+          <div class="label">Cobá road</div>
+          <h3>Zacil-Ha &amp; Car Wash (Aktun Ha)</h3>
+          <p>Laid-back open-air cenotes, good for families and an easy swim.</p>
+        </div>
+        <div class="card">
+          <div class="label">Hwy 307 north</div>
+          <h3>Dos Ojos</h3>
+          <p>World-famous cave system for snorkeling and diving. A guided tour is worth it.</p>
+        </div>
+        <div class="card">
+          <div class="label">Tankah Bay</div>
+          <h3>Casa Cenote</h3>
+          <p>A mangrove-lined cenote that flows to the sea, just north of Tulum. Gentle and great for kids.</p>
+        </div>
+        <div class="card">
+          <div class="label">Hwy 307 north</div>
+          <h3>Cenote Azul &amp; Jardín del Edén</h3>
+          <p>Big, sunny open cenotes with cliff jumps, between Tulum and Playa del Carmen.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 6. Day trips -->
-  <section>
-    <div class="kicker">06 · Explore</div>
-    <h2>day trips</h2>
-    <div class="grid">
-      <div class="card near">
-        <span class="tag near">45 min · Cobá road</span>
-        <h3>Cobá</h3>
-        <p>A huge Mayan city in the jungle. Rent a bike or pedicab to reach the pyramid, and stop at cenotes on the way.</p>
-      </div>
-      <div class="card">
-        <span class="tag">25 min north</span>
-        <h3>Akumal</h3>
-        <p>Snorkel with sea turtles in the bay. Go with a certified guide and keep your distance from the turtles.</p>
-      </div>
-      <div class="card">
-        <span class="tag">South</span>
-        <h3>Sian Ka'an &amp; Muyil</h3>
-        <p>A UNESCO biosphere with lagoons, dolphins, birds and floating canals. Combine it with the small, peaceful Muyil ruins.</p>
-      </div>
-      <div class="card">
-        <span class="tag">2–2.5 hrs</span>
-        <h3>Bacalar</h3>
-        <p>The "lagoon of seven colors." Stay overnight if you can.</p>
-      </div>
-      <div class="card">
-        <span class="tag">1.5–2 hrs</span>
-        <h3>Valladolid &amp; Chichén Itzá</h3>
-        <p>A colorful colonial town and a wonder of the world. Arrive at Chichén Itzá at opening time.</p>
-      </div>
-      <div class="card">
-        <span class="tag">Family</span>
-        <h3>Xel-Há, Xcaret &amp; Xplor</h3>
-        <p>All-inclusive eco-parks for snorkeling and ziplines. Pricey, but great for kids.</p>
+  <!-- Eat -->
+  <section id="eat">
+    <div class="tab"><div class="label">05 · Eat</div><h2 class="display">where to eat</h2></div>
+    <div class="inner">
+      <p class="lede">Eat in town (<i>el pueblo</i>) for real flavor at local prices. Three tacos in town often cost what one costs on the beach.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="label">Tacos · dinner</div>
+          <h3>Antojitos La Chiapaneca</h3>
+          <p>A local favorite for tacos al pastor and salbutes. Evenings only, cash only, standing room.</p>
+        </div>
+        <div class="card">
+          <div class="label">Breakfast · lunch</div>
+          <h3>Taquería Honorio</h3>
+          <p>Yucatecan cochinita pibil and lechón tacos. Opens early and often sells out by early afternoon.</p>
+        </div>
+        <div class="card">
+          <div class="label">Tacos · grill</div>
+          <h3>El Asadero</h3>
+          <p>Grilled-meat tacos and plates, consistently rated among the best value in town.</p>
+        </div>
+        <div class="card">
+          <div class="label">Seafood</div>
+          <h3>El Camello Jr.</h3>
+          <p>No-frills seafood spot on the main avenue, known for huge ceviches and fish tacos.</p>
+        </div>
+        <div class="card">
+          <div class="label">Seafood</div>
+          <h3>Los Aguachiles</h3>
+          <p>Lively seafood cantina with aguachiles, tostadas and shrimp tacos.</p>
+        </div>
+        <div class="card">
+          <div class="label">Coffee · breakfast</div>
+          <h3>Don Cafeto &amp; Burrito Amor</h3>
+          <p>Easy, reliable picks downtown: classic Mexican breakfasts at Don Cafeto, and big burritos and smoothies at Burrito Amor.</p>
+        </div>
+        <div class="card">
+          <div class="label">Special night out</div>
+          <h3>Hartwood (beach road)</h3>
+          <p>Famous wood-fired restaurant in the hotel zone. Book ahead.</p>
+        </div>
+        <div class="card">
+          <div class="label">Treat</div>
+          <h3>Marquesitas &amp; elotes</h3>
+          <p>Look for evening street carts in the town square: crispy rolled marquesitas and corn on the cob.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Church -->
-  <section class="church">
-    <div class="kicker">You're welcome here</div>
-    <h2>worship with us while you're in Tulum</h2>
-    <p>We are an English-speaking, non-denominational church made up of ordinary people, seeking to serve an extraordinary God. We offer contemporary worship in a casual environment, and visitors are always welcome!</p>
-    <div class="service kicker">In person + online · Every Sunday at 10:00 AM</div>
-    <p>📍 Carretera Tulum–Cobá km 7, Colonia Tankah, Tulum, Q.R.</p>
-    <div class="btns">
-      <a class="btn" href="https://maps.app.goo.gl/aiFT6A3h5QCtSxP46">Find us on Google Maps</a>
-      <a class="btn" href="https://www.youtube.com/@LighthouseTulum">Watch online</a>
-      <a class="btn" href="https://www.lighthousechurch.com.mx">lighthousechurch.com.mx</a>
+  <!-- Day trips -->
+  <section id="trips" class="paper">
+    <div class="tab"><div class="label">06 · Explore</div><h2 class="display">day trips</h2></div>
+    <div class="inner">
+      <div class="grid">
+        <div class="card near">
+          <div class="label">45 min · Cobá road</div>
+          <h3>Cobá</h3>
+          <p>A huge Mayan city in the jungle. Rent a bike or pedicab to reach the pyramid, and stop at cenotes on the way.</p>
+        </div>
+        <div class="card">
+          <div class="label">25 min north</div>
+          <h3>Akumal</h3>
+          <p>Snorkel with sea turtles in the bay. Go with a certified guide and keep your distance from the turtles.</p>
+        </div>
+        <div class="card">
+          <div class="label">South</div>
+          <h3>Sian Ka'an &amp; Muyil</h3>
+          <p>A UNESCO biosphere with lagoons, dolphins, birds and floating canals. Combine it with the small, peaceful Muyil ruins.</p>
+        </div>
+        <div class="card">
+          <div class="label">2–2.5 hrs</div>
+          <h3>Bacalar</h3>
+          <p>The "lagoon of seven colors." Stay overnight if you can.</p>
+        </div>
+        <div class="card">
+          <div class="label">1.5–2 hrs</div>
+          <h3>Valladolid &amp; Chichén Itzá</h3>
+          <p>A colorful colonial town and a wonder of the world. Arrive at Chichén Itzá at opening time.</p>
+        </div>
+        <div class="card">
+          <div class="label">Family</div>
+          <h3>Xel-Há, Xcaret &amp; Xplor</h3>
+          <p>All-inclusive eco-parks for snorkeling and ziplines. Pricey, but great for kids.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about">
+    <div class="inner cols">
+      <div>
+        <div class="label">About</div>
+        <img class="logo" src="img/logo-sand.png" alt="Lighthouse Church Tulum">
+        <p>We are an English-speaking non-denominational church made up of ordinary people, seeking to serve an extraordinary God. We offer contemporary worship in a casual environment. Visitors are always welcome!</p>
+        <p class="small">Carretera Tulum–Cobá km 7, Colonia Tankah, Tulum, Q.R.</p>
+        <div class="btns">
+          <a class="btn" href="https://maps.app.goo.gl/aiFT6A3h5QCtSxP46">Find Us on Google Maps</a>
+          <a class="btn" href="https://www.lighthousechurch.com.mx">Visit our website</a>
+        </div>
+      </div>
+      <div class="vision">
+        <h2 class="display">enjoy tulum</h2>
+        <p>We hope this guide helps you make the most of your time here. If you'd like to worship with us while you're in town, you'll find everything you need on our website.</p>
+      </div>
     </div>
   </section>
 
   <p class="foot">Prices and hours in Tulum change often, so please confirm before you go. Updated October 2026. · <a href="What-to-do-in-Tulum.pdf">Download as PDF</a></p>
-</div>
+
 </body>
 </html>
